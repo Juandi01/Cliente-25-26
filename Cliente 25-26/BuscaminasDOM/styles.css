@@ -1,0 +1,61 @@
+body {
+
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+#tablero {
+    /* Contenedor principal: Borde y fondo */
+    display: inline-block; /* Se ajusta al contenido (ancho de las filas) */
+    background-color: #888;
+    padding: 5px;
+    border: 2px solid #555;
+    margin-top: 20px;
+}
+
+.fila {
+    /* Las filas son bloques, se apilan una debajo de otra por defecto */
+    display: flex; /* Para que las celdas dentro se alineen horizontalmente */
+}
+
+.celda {
+    width: 60px;  /* Tamaño aquí */
+    height: 60px; 
+    background-color: #c0c0c0;
+    
+    /* Centrar contenido (futuros números/minas) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-weight: bold;
+    cursor: pointer;
+    
+    /* Bordes para efecto 3D */
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    
+    /* Resetear box-sizing si usas un reset global, para asegurar los 30px */
+    box-sizing: border-box; 
+}
+
+.celda:active {
+    border: 1px solid #999;
+}
+
+
+.celda.revelada {
+    background-color: #ddd; /* Gris claro */
+    cursor: default;        /* Quitar la manita del ratón */
+    border: 1px solid #999; /* Borde plano */
+}
+
+.celda.binladen{
+    width: 40px;
+    height: 40px;
+}
